@@ -14,4 +14,8 @@ router.post('/login' , control.login);
 
 router.get('/getAllAdmins' ,verfiyToken , control.getAllAdmins )
 
+router.get('/getRequests' ,verfiyToken ,  control.getNonAciveAdmins);
+
+router.get('/activeThis/:ID' , verfiyToken,control.activeThis);
+
 module.exports = router;
