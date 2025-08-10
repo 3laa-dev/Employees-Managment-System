@@ -112,5 +112,15 @@ const activeThis = asyncWrapper(async(req,res,next)=>{
 
 })
 
+const deleteAdmin = asyncWrapper(async (req , res , next)=>{
+    const ID = req.params.ID;
+    const admin = await Admin.findById(ID);
+    if(admin.isActive)
+        return next(new appError("this admin is active" , 400 , status.FAIL))
 
-module.exports={register , login , getAllAdmins  , getNonAciveAdmins , activeThis}
+    await Admin.findByIdAndDelete(ID);
+    res.json({status:status.SUCCESS , data:null});
+
+})
+
+module.exports={register , login , getAllAdmins  , getNonAciveAdmins , activeThis, deleteAdmin}

@@ -132,6 +132,7 @@ const updateManager = asyncWrapper(async (req, res, next) => {
             return next(error)
         }
 
+        
          await Manager.updateOne({_id:req.params.ID} , {...req.body});
         const updated = await Manager.findById(req.params.ID);
         return sendData(res , status.SUCCESS ,{UpdatedManager : updated} )
