@@ -18,6 +18,6 @@ router.get('/getRequests' ,verfiyToken ,  control.getNonAciveAdmins);
 
 router.get('/activeThis/:ID' , verfiyToken,control.activeThis);
 
-router.delete('/deleteAdmin/:ID' , control.deleteAdmin);
+router.delete('/deleteAdmin/:ID' ,verfiyToken ,  control.deleteAdmin);
 
 module.exports = router;
