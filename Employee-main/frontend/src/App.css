@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+}
+.out:hover{
+ background-color: #008e76 !important;
+color: white !important;
+border: #00bfa5;
+transition:0.3s
+}
+
+button:hover{
+    color:#6A1B9A  !important;
+    background-color: white  !important;
+      transition: 0.3s; 
+  box-Shadow: 8;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
